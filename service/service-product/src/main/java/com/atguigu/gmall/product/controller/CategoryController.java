@@ -23,6 +23,7 @@ import java.util.List;
 @RestController
 public class CategoryController {
 //    /admin/product/getCategory1
+
     @Autowired
     BaseCategory1Service baseCategory1Service;
 
