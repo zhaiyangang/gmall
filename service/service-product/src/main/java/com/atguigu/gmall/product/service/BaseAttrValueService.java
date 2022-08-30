@@ -11,6 +11,7 @@ import java.util.List;
 * @createDate 2022-08-25 20:03:45
 */
 public interface BaseAttrValueService extends IService<BaseAttrValue> {
+
     /**
      * 根据平台属性id查询所有的平台属性值
      * @param attrId

@@ -20,6 +20,8 @@ public class BaseAttrValueServiceImpl extends ServiceImpl<BaseAttrValueMapper, B
     implements BaseAttrValueService{
     @Autowired
     BaseAttrValueMapper baseAttrValueMapper;
+
+
     /**
      * 根据平台属性id查询所有的平台属性值
      * @param attrId
@@ -27,11 +29,12 @@ public class BaseAttrValueServiceImpl extends ServiceImpl<BaseAttrValueMapper, B
      */
     @Override
     public List<BaseAttrValue> getAttrValueList(Long attrId) {
-        QueryWrapper<BaseAttrValue> wrapper = new QueryWrapper(attrId);
+        QueryWrapper<BaseAttrValue> wrapper = new QueryWrapper<>();
         wrapper.eq("attr_id",attrId);
         List<BaseAttrValue> valueList = baseAttrValueMapper.selectList(wrapper);
         return valueList;
     }
+
 }
 
 

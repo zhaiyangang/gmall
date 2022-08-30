@@ -5,6 +5,7 @@ import com.atguigu.gmall.model.product.BaseAttrInfo;
 import com.atguigu.gmall.model.product.BaseAttrValue;
 import com.atguigu.gmall.product.service.BaseAttrInfoService;
 import com.atguigu.gmall.product.service.BaseAttrValueService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,12 +42,13 @@ public class BaseAttrController {
     //saveAttrInfo
 
     /**
-     * 保存平台属性信息
+     * 保存、修改二合一平台属性信息
      * @param info
      * @return
      */
     @PostMapping("/saveAttrInfo")
     public Result saveAttrInfo(@RequestBody BaseAttrInfo info){
+        //如果携带的数据中id值为null那么是新增操作，如果不为null那就是修改操作
         baseAttrInfoService.saveAttrInfo(info);
         return Result.ok();
     }

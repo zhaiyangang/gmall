@@ -5,11 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>common</module>
-        <module>common-util</module>
-        <module>service-util</module>
+
         <module>model</module>
         <module>service</module>
-        <module>common-util</module>
+        
         <module>server-gateway</module>
     </modules>
 
