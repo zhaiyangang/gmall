@@ -5,10 +5,7 @@ import com.atguigu.gmall.model.product.BaseTrademark;
 import com.atguigu.gmall.product.service.BaseTrademarkService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 品牌API
@@ -35,8 +32,44 @@ public class BaseTrademarkController {
         Page<BaseTrademark> baseTrademarkPage = baseTrademarkService.page(page1);
         return Result.ok(baseTrademarkPage);
     }
-    ///admin/product/baseTrademark/save
-    public Result save(){
+    /**
+     * 添加品牌
+     * @param baseTrademark
+     * @return
+     */
+    @PostMapping("baseTrademark/save")
+    public Result saveBaseTrademark(@RequestBody BaseTrademark baseTrademark){
+        baseTrademarkService.save(baseTrademark);
+        return Result.ok();
+    }
+    /**
+     * 根据Id获取品牌
+     * @param id 前端传过来的品牌id
+     * @return
+     */
+    @GetMapping("/baseTrademark/get/{id}")
+    public Result getByIdBaseTrademark(@PathVariable("id")Long id){
+        BaseTrademark byId = baseTrademarkService.getById(id);
+        return Result.ok(byId);
+    }
+    /**
+     * 修改品牌
+     * @param baseTrademark
+     * @return
+     */
+    @PutMapping("/baseTrademark/update")
+    public Result updateBaseTrademark(@RequestBody BaseTrademark baseTrademark){
+        baseTrademarkService.updateById(baseTrademark);
+        return Result.ok();
+    }
+    /**
+     * 根据品牌id删除品牌
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/baseTrademark/remove/{id}")
+    public Result removeBaseTrademark(@PathVariable("id")Long id){
+        baseTrademarkService.removeById(id);
         return Result.ok();
     }
 }
