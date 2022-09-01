@@ -2,6 +2,8 @@ package com.atguigu.gmall.product.controller;
 
 import com.atguigu.gmall.common.result.Result;
 import com.atguigu.gmall.product.service.FileUploadService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @CookieValue： 获取浏览器发送的请求的Cookie值
  * - 如果多个就写数据，否则就写单个对象
  */
+@Api(tags = "文件上传控制器",value ="文件上传控制器")
 @RequestMapping("/admin/product")
 @RestController
 public class FileuploadController {
@@ -31,6 +34,7 @@ public class FileuploadController {
      * @RequestParam("file")MultipartFile file
      * @RequestPart("file")MultipartFile file 专门用来接文件，推荐使用
      */
+    @ApiOperation("文件上传")
     @PostMapping("/fileUpload")
     public Result fileUpload(@RequestPart("file")MultipartFile file) throws Exception {
         String url = fileUploadService.upload(file);
