@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 public class spuController {
     @Autowired
     SpuInfoService spuInfoService;
-    //http://api.gmall.com/admin/product/{page}/{limit}?category3Id=61
+
 
     /**
      * 分页获取spu属性
@@ -34,22 +34,25 @@ public class spuController {
     @GetMapping("/{page}/{limit}")
     public Result getSpuPage(@PathVariable("page")Long page,
                              @PathVariable("limit")Long limit,
-            @RequestParam("category3Id")Long category3Id){
+            @RequestParam("category3Id")Long category3Id){//请求参数category3Id用@RequestParam来接收
         Page<SpuInfo> spuInfoPage = new Page<>(page,limit);
         QueryWrapper<SpuInfo> spuInfoWrapper = new QueryWrapper<>();
         spuInfoWrapper.eq("category3_id",category3Id);
         Page<SpuInfo> infoPage = spuInfoService.page(spuInfoPage, spuInfoWrapper);
         return Result.ok(infoPage);
     }
-    //http://api.gmall.com/admin/product/baseSaleAttrList
+
+    ///admin/product/saveSpuInfo
 
     /**
-     * 获取销售属性
+     * 添加spu
+     * @param spuInfo
      * @return
      */
-    @ApiOperation("获取销售属性")
-    @GetMapping("/baseSaleAttrList")
-    public Result baseSaleAttrList(){
+    @ApiOperation("添加spu")
+    @PostMapping("/saveSpuInfo")
+    public Result saveSpuInfo(@RequestBody SpuInfo spuInfo){
+        spuInfoService.saveSpuInfo(spuInfo);
         return Result.ok();
     }
 }

@@ -9,6 +9,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * 品牌API
  * @Auther ZYG
@@ -79,5 +81,15 @@ public class BaseTrademarkController {
     public Result removeBaseTrademark(@PathVariable("id")Long id){
         baseTrademarkService.removeById(id);
         return Result.ok();
+    }
+    /**
+     * 获取品牌属性集合
+     * @return
+     */
+    @ApiOperation("获取品牌属性集合")
+    @GetMapping("/baseTrademark/getTrademarkList")
+    public Result getTrademarkList(){
+        List<BaseTrademark> baseTrademarkList = baseTrademarkService.list();
+        return Result.ok(baseTrademarkList);
     }
 }

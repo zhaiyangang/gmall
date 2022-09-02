@@ -9,5 +9,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2022-08-25 20:03:45
 */
 public interface SpuInfoService extends IService<SpuInfo> {
-
+    /**
+     * 添加spu
+     * @param spuInfo
+     */
+    void saveSpuInfo(SpuInfo spuInfo);
 }
