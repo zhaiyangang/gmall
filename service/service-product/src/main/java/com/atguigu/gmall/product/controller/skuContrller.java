@@ -14,10 +14,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -79,5 +76,40 @@ public class skuContrller {
         List<SpuSaleAttr> spuSaleAttrs = spuSaleAttrService.getSpuSaleAttrAndValueByspuId(spuId);
 
         return Result.ok(spuSaleAttrs);
+    }
+    /**
+     * sku大保存
+     * @param skuInfo
+     * @return
+     */
+    @ApiOperation("sku大保存")
+    @PostMapping("/saveSkuInfo")
+    public Result saveSkuInfo(@RequestBody SkuInfo skuInfo ){
+        skuInfoService.saveSkuInfo(skuInfo);
+        return Result.ok();
+    }
+    /**
+     * 上架
+     * @param skuId
+     * @return
+     */
+    @ApiOperation("上架")
+    @GetMapping("/onSale/{skuId}")
+    public Result onSale(@PathVariable("skuId")Long skuId) {
+        skuInfoService.onSale(skuId);
+        return Result.ok();
+        //todo 在ES中添加这个商品
+    }
+    /**
+     * 下架
+     * @param skuId
+     * @return
+     */
+    @ApiOperation("下架")
+    @GetMapping("/cancelSale/{skuId}")
+    public Result cancelSale(@PathVariable("skuId")Long skuId){
+        skuInfoService.cancelSale(skuId);
+        return Result.ok();
+        //todo 在ES中删除这个商品
     }
 }

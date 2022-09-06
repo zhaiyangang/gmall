@@ -1,0 +1,52 @@
+{
+  "id": null,
+  "spuId": 33,
+  "price": "2399.00",
+  "skuName": " Redmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GBRedmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GB 关注 对比举报 Redmi K40S 小米手机 骁龙870 三星E4 AMOLED 120Hz直屏 OIS光学防抖 亮黑 12GB+256GB",
+  "weight": "0.32kg",
+  "skuDesc": "主体\n机型\n小米 Redmi K40S\n上市日期\n2022-03-17\n入网型号\n22021211RC\n基本信息\nCPU型号\n骁龙870\n机身尺寸\n宽75.95mm；长163.2mm；厚7.7mm\n机身重量\n195g\n机身颜色\n亮黑色\n屏幕\n屏幕分辨率\nFHD+\n屏幕材质\nOLED直屏\n屏幕尺寸\n6.67英寸\n屏幕刷新率\n120Hz\n屏幕特色\nSGS认证\n电池信息\n无线充电\n不支持\n电池容量\n4500mAh(typ)\n充电功率\n67W\n操作系统\n系统\nAndroid\n网络支持\n双卡机类型\n以官网信息为准\nSIM卡类型\nNano SIM\n5G网络\n支持5G\n3G/2G网络\n以官网信息为准\n4G网络\n4G FDD-LTE；4G TD-LTE\nSIM卡数量\n2个\n数据接口\n数据接口\n蓝牙；NFC\n充电接口\nType-C\n耳机接口\nType-C\n手机特性\n生物识别\n侧面指纹\n摄像头\n后摄主像素\n4800万像素\n后摄2-超广角像素\n800万像素\n前摄主像素\n未上市\n后摄3-tele像素\n普通(以官网信息为准)\n拍照特色\n光学防抖",
+  "category3Id": 61,
+  "skuAttrValueList": [
+    {
+      "attrId": "1",
+      "valueId": "4"
+    },
+    {
+      "attrId": "2",
+      "valueId": "11"
+    },
+    {
+      "attrId": "3",
+      "valueId": "19"
+    },
+    {
+      "attrId": "4",
+      "valueId": "27"
+    },
+    {
+      "attrId": "5",
+      "valueId": "37"
+    },
+    {
+      "attrId": "11",
+      "valueId": "60"
+    }
+  ],
+  "skuSaleAttrValueList": [
+    {
+      "saleAttrValueId": "143",
+      "saleAttrValueName": "蓝色",
+      "baseSaleAttrId": "1",
+      "saleAttrName": "选择颜色"
+    },
+    {
+      "saleAttrValueId": "145",
+      "saleAttrValueName": "128G",
+      "baseSaleAttrId": "2",
+      "saleAttrName": "选择版本"
+    }
+  ],
+  "skuImageList": [],
+  "skuDefaultImg": null,
+  "tmId": 4
+}
