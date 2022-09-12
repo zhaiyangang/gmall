@@ -12,6 +12,8 @@
     <artifactId>service</artifactId>
     <modules>
         <module>service-product</module>
+        <module>web-all</module>
+        <module>service-item</module>
     </modules>
 
     <properties>

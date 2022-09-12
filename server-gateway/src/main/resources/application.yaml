@@ -26,7 +26,7 @@ spring:
           predicates:  #断言
             - Path=/admin/product/**
 
-#        - id: wed_all_route
-#            uri: lb://web-all
-#            predicates: #断言
-#              - Host=**.gmall.com
+        - id: wed_all_route
+          uri: lb://web-all
+          predicates: #断言
+            - Host=**.gmall.com
