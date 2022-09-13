@@ -25,7 +25,7 @@ public class SkuDetailServiceImpl implements SkuDetailService {
         SkuDetailTo skuDetailTo = new SkuDetailTo();
         //TODO 准备查询所需要的数据
         Result<SkuDetailTo> skuDetai = skuDetailFeignClient.getSkuDetai(skuId);
-
-        return skuDetai.getData();
+        SkuDetailTo data = skuDetai.getData();
+        return data;
     }
 }

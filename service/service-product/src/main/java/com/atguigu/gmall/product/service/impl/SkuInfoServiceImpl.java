@@ -1,17 +1,11 @@
 package com.atguigu.gmall.product.service.impl;
 
-import com.atguigu.gmall.model.product.SkuAttrValue;
-import com.atguigu.gmall.model.product.SkuImage;
-import com.atguigu.gmall.model.product.SkuInfo;
-import com.atguigu.gmall.model.product.SkuSaleAttrValue;
+import com.atguigu.gmall.model.product.*;
 import com.atguigu.gmall.model.to.CategoryViewTo;
 import com.atguigu.gmall.model.to.SkuDetailTo;
 import com.atguigu.gmall.product.mapper.BaseCategory3Mapper;
-import com.atguigu.gmall.product.service.SkuAttrValueService;
-import com.atguigu.gmall.product.service.SkuImageService;
-import com.atguigu.gmall.product.service.SkuSaleAttrValueService;
+import com.atguigu.gmall.product.service.*;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.gmall.product.service.SkuInfoService;
 import com.atguigu.gmall.product.mapper.SkuInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +28,8 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
     SkuImageService skuImageService;
     @Autowired
     SkuAttrValueService skuAttrValueService;
+    @Autowired
+    SpuSaleAttrService spuSaleAttrService;
     @Autowired
     SkuSaleAttrValueService skuSaleAttrValueService;
     @Autowired
@@ -109,6 +105,9 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
         //查询商品实时价格
         BigDecimal price = get1010Price(skuId);
         detailTo.setPrice(price);
+
+        List<SpuSaleAttr> attrList = spuSaleAttrService.getSaleAttrAndValueMarkSku(skuInfo.getSpuId(),skuId);
+        detailTo.setSpuSaleAttrList(attrList);
         CategoryViewTo categoryViewTo = baseCategory3Mapper.getCategoryView(skuInfo.getCategory3Id());
         detailTo.setCategoryView(categoryViewTo);
         return detailTo;

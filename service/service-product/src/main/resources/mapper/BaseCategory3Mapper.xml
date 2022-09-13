@@ -14,13 +14,14 @@
         id,name,category2_id
     </sql>
     <resultMap id="getCategoryViewRM" type="com.atguigu.gmall.model.to.CategoryViewTo">
-        <id column="bc1_id" property="category1Id"></id>
+        <result column="bc1_id" property="category1Id"></result>
         <result column="bc1_name" property="category1Name"></result>
-        <id column="bc2_id" property="category2Id"></id>
+        <result column="bc2_id" property="category2Id"></result>
         <result column="bc2_name" property="category2Name"></result>
-        <id column="bc3_id" property="category3Id"></id>
+        <result column="bc3_id" property="category3Id"></result>
         <result column="bc3_name" property="category3Name"></result>
     </resultMap>
+
     <select id="getCategoryView" resultMap="getCategoryViewRM">
         SELECT bc3.`id` bc3_id, bc3.`name` bc3_name,
                bc2.`id` bc2_id,bc2.`name` bc2_name,

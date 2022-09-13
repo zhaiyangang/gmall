@@ -34,4 +34,6 @@ public class CategoryApliController {
         List<CategoryTreeTo> categoryategoryTreeTo = baseCategory2Service.getCategoryWithTree();
         return Result.ok(categoryategoryTreeTo);
     }
+
+
 }

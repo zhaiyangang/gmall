@@ -42,8 +42,6 @@ public class BaseCategory2ServiceImpl extends ServiceImpl<BaseCategory2Mapper, B
      */
     @Override
     public List<CategoryTreeTo> getCategoryWithTree() {
-
-
         return baseCategory2Mapper.getCategoryWithTree();
     }
 }

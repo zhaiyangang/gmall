@@ -17,4 +17,6 @@ public interface SpuSaleAttrService extends IService<SpuSaleAttr> {
      * @return
      */
     List<SpuSaleAttr> getSpuSaleAttrAndValueByspuId(Long spuId);
+
+    List<SpuSaleAttr> getSaleAttrAndValueMarkSku(Long spuId, Long skuId);
 }
