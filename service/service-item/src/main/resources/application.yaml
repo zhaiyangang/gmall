@@ -24,6 +24,9 @@ spring:
     base-url: http://192.168.200.100:9411/
     sender:
       type:
+  redis:
+    host: 192.168.200.100
+    password: Lfy123456
   #排除数据源
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
@@ -34,9 +37,16 @@ spring:
 #    driver-class-name: com.mysql.jdbc.Driver
 
 # 自定义配置
-#app:
-#  minio:
-#    endpoint: http://192.168.200.100:9000
-#    accessKey: admin
-#    secretKey: admin123456
-#    bucketName: gmall
+app:
+  thread-pool:
+    core: 4
+    max: 8
+    queue-size: 2000
+    keep-alive-time: 300 #  秒为单位
+
+# 暴露所有的监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

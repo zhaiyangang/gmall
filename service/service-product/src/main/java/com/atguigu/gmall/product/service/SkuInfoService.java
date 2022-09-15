@@ -1,10 +1,12 @@
 package com.atguigu.gmall.product.service;
 
+import com.atguigu.gmall.model.product.SkuImage;
 import com.atguigu.gmall.model.product.SkuInfo;
 import com.atguigu.gmall.model.to.SkuDetailTo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
 * @author 刚
@@ -30,12 +32,12 @@ public interface SkuInfoService extends IService<SkuInfo> {
      */
     void onSale(Long skuId);
 
-    /**
-     * 查询商品详情
-     * @param skuId
-     * @return
-     */
-    SkuDetailTo getSkuDetail(Long skuId);
+//    /**
+//     * 查询商品详情
+//     * @param skuId
+//     * @return
+//     */
+//    SkuDetailTo getSkuDetail(Long skuId);
 
     /**
      * 获取sku的实时价格
@@ -43,4 +45,18 @@ public interface SkuInfoService extends IService<SkuInfo> {
      * @return
      */
     BigDecimal get1010Price(Long skuId);
+
+    /**
+     * 查询sku的基本信息
+     * @param skuId
+     * @return
+     */
+    SkuInfo getDetailSkuInfo(Long skuId);
+
+    /**
+     * 查询SKU的图片信息
+     * @param skuId
+     * @return
+     */
+    List<SkuImage> getDetailSkuImages(Long skuId);
 }

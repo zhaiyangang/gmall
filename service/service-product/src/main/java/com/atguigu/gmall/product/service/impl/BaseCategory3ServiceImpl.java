@@ -1,6 +1,7 @@
 package com.atguigu.gmall.product.service.impl;
 
 import com.atguigu.gmall.model.product.BaseCategory3;
+import com.atguigu.gmall.model.to.CategoryViewTo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.atguigu.gmall.product.service.BaseCategory3Service;
@@ -31,6 +32,17 @@ public class BaseCategory3ServiceImpl extends ServiceImpl<BaseCategory3Mapper, B
         wrapper.eq("category2_id",c2id);
         List<BaseCategory3> baseCategory3s = baseCategory3Mapper.selectList(wrapper);
         return baseCategory3s;
+    }
+
+    /**
+     * 根据三级分类查出精确路径
+     * @param category3Id
+     * @return
+     */
+    @Override
+    public CategoryViewTo getCategoryView(Long category3Id) {
+        CategoryViewTo categoryViewTo = baseCategory3Mapper.getCategoryView(category3Id);
+        return categoryViewTo;
     }
 }
 
